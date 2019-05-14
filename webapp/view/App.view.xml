@@ -92,8 +92,21 @@
 							<IconTabFilter text="{i18n>dataBindingFilter} " key="db">
 								<content>
 									<List
-										headerText="{i18n>productListTitle}"
-										items="{/ProductSet}">
+										id="productsList"
+										items="{
+											path : '/ProductSet',
+											sorter : {
+												path : 'Category', 
+												group : true
+											}
+										}">
+										<headerToolbar>
+											<Toolbar>
+												<Title text="{i18n>productListTitle}"/>
+												<ToolbarSpacer/>
+												<SearchField width="50%" search="onFilterProducts"/>
+											</Toolbar>	
+										</headerToolbar>
 										<items>
 											<ObjectListItem
 												intro="{ProductID}"

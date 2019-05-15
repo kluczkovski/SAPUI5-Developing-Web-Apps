@@ -99,7 +99,11 @@
 												path : 'Category', 
 												group : true
 											}
-										}">
+										}" 
+										growing="true"
+										growingThreshold="5"
+										growingScrollToLoad="false">
+										
 										<headerToolbar>
 											<Toolbar>
 												<Title text="{i18n>productListTitle}"/>
@@ -110,6 +114,8 @@
 										<items>
 											<ObjectListItem
 												intro="{ProductID}"
+												press="onItemSelected"
+												type="Active"
 												title="{Name}" 
 												number="{
 													parts: [
@@ -132,6 +138,16 @@
 											</ObjectListItem>	
 										</items>	
 									</List>	
+									<Panel id="productDetailsPanel"
+										   headerText="{i18n>productDetailPanelHeader}"	
+										   visible="false">
+										<l:Grid>
+											<Text text="{i18n>productDetailPanelID}: {ProductID}"/>
+											<Text text="{i18n>productDetailPanelName}: {Name}"/>
+											<Text text="{i18n>productDetailPanelDescription}:\n {Description}"/>
+											<Text text="{i18n>productDetailPanelPrice}: {Price}"/>	
+										</l:Grid>
+									</Panel>
 								</content>
 							</IconTabFilter>
 							

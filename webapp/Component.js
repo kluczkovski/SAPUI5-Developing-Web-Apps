@@ -14,6 +14,8 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 
 			// additional initialization can be done here
+			// used only for this lessons to show
+			//this.getModel().setUseBatch(false);
 		}
 
 	});

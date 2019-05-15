@@ -45,6 +45,21 @@ sap.ui.define([
 			// apply filter. an empty filter array simply removes the filter
 			// which will make all entries visible again
 			oBinding.filter(aFilter);
+		},
+		
+		onItemSelected : function(oEvent){
+			console.log(oEvent);
+			var oSelectedItem = oEvent.getSource();
+			console.log(oSelectedItem);
+			var oContext = oSelectedItem.getBindingContext();
+			console.log(oContext);
+			var sPath = oContext.getPath();
+			console.log(sPath);
+			var oProductDetailPanel = this.byId("productDetailsPanel");
+			console.log(oProductDetailPanel);
+			
+			oProductDetailPanel.bindElement({path: sPath});
+			this.byId("productDetailsPanel").setVisible(true);
 		}
 	});
 });

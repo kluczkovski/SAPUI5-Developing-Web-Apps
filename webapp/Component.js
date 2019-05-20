@@ -15,7 +15,7 @@ sap.ui.define([
 
 			// additional initialization can be done here
 			// used only for this lessons to show
-			//this.getModel().setUseBatch(false);
+			this.getModel().setUseBatch(false);
 		}
 
 	});
